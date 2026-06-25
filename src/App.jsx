@@ -27,8 +27,7 @@ const skills = [
 const experiences = [
   {
     role: 'Senior Site Reliability Engineer',
-    company: 'TechCorp Inc.',
-    period: '2023 — Present',
+    period: '2022 — Present',
     highlights: [
       'Reduced p99 latency by 40% through Kubernetes resource optimization and HPA tuning across 200+ microservices',
       'Designed and implemented GitOps workflow with ArgoCD, reducing deployment time from 45min to 4min',
@@ -37,9 +36,8 @@ const experiences = [
     ],
   },
   {
-    role: 'DevOps Engineer',
-    company: 'DataFlow Systems',
-    period: '2021 — 2023',
+    role: 'Support Engineer',
+    period: '2019 — 2020',
     highlights: [
       'Migrated 150+ services from EC2 to EKS with zero downtime, saving $120K/year in infrastructure costs',
       'Automated Terraform module registry serving 15 platform teams, reducing infra provisioning from 2 weeks to 2 hours',
@@ -47,9 +45,8 @@ const experiences = [
     ],
   },
   {
-    role: 'Platform Engineer',
-    company: 'StartupXYZ',
-    period: '2019 — 2021',
+    role: 'Support Engineer',
+    period: '2018 — 2019',
     highlights: [
       'Built internal developer platform (IDP) with Backstage, serving 8 squads with self-service infra',
       'Reduced cloud spend 35% via right-sizing, reserved instances, and spot instance strategy',
@@ -63,32 +60,26 @@ const projects = [
     title: 'Kubernetes Cost Optimizer',
     desc: 'Open-source tool that analyzes cluster resource utilization and recommends right-sizing, spot instances, and RI purchases. 500+ GitHub stars.',
     tags: ['Go', 'Kubernetes', 'Prometheus', 'Terraform'],
-    links: { github: '#', docs: '#' },
+    url: 'https://github.com/pkalab/k8s-cost-optimizer',
   },
   {
     title: 'GitOps Pipeline Template',
     desc: 'Reusable GitHub Actions + ArgoCD pipeline template with integrated security scanning, drift detection, and Slack notifications.',
     tags: ['GitHub Actions', 'ArgoCD', 'Helm', 'Kubernetes'],
-    links: { github: '#' },
+    url: 'https://github.com/pkalab/gitops-pipeline-template',
   },
   {
     title: 'Incident Response Bot',
     desc: 'Slack bot for automated incident response — creates war rooms, runs diagnostic playbooks, and posts postmortems. Used by 3 teams internally.',
     tags: ['Python', 'Slack API', 'AWS Lambda', 'Terraform'],
-    links: { github: '#', docs: '#' },
+    url: 'https://github.com/pkalab/incident-bot',
   },
   {
     title: 'Infrastructure as Code Library',
     desc: 'Comprehensive Terraform module collection for AWS EKS, RDS, ElastiCache, and networking with compliance controls built in.',
     tags: ['Terraform', 'AWS', 'Vault', 'Consul'],
-    links: { github: '#' },
+    url: 'https://github.com/pkalab/iac-library',
   },
-]
-
-const socialLinks = [
-  { label: 'GitHub', url: '#', icon: '&#xE000;' },
-  { label: 'LinkedIn', url: '#', icon: '&#xE001;' },
-  { label: 'Email', url: 'mailto:you@example.com', icon: '&#x2709;' },
 ]
 
 function App() {
@@ -125,7 +116,7 @@ function App() {
         </div>
         <h1 className="hero-title">
           <span className="hero-greeting">Hi, I'm</span>
-          <span className="hero-name">Your Name</span>
+          <span className="hero-name">Polina</span>
         </h1>
         <p className="hero-subtitle">
           <span className="typing-prefix">$</span> Site Reliability Engineer{' '}
@@ -199,7 +190,6 @@ function App() {
                 <div className="exp-marker" />
                 <div className="exp-info">
                   <h3 className="exp-role">{exp.role}</h3>
-                  <p className="exp-company">{exp.company}</p>
                 </div>
                 <span className="exp-period">{exp.period}</span>
               </div>
@@ -223,7 +213,7 @@ function App() {
         <p className="section-desc">Open-source and internal tools I've built</p>
         <div className="projects-grid">
           {projects.map((p, i) => (
-            <div key={i} className="project-card">
+            <a key={i} className="project-card" href={p.url} target="_blank" rel="noreferrer">
               <div className="project-folder-icon">&#x1F4C1;</div>
               <h3 className="project-title">{p.title}</h3>
               <p className="project-desc">{p.desc}</p>
@@ -232,11 +222,7 @@ function App() {
                   <span key={t} className="tag">{t}</span>
                 ))}
               </div>
-              <div className="project-links">
-                {p.links.github && <a href={p.links.github} target="_blank" rel="noreferrer">GitHub</a>}
-                {p.links.docs && <a href={p.links.docs} target="_blank" rel="noreferrer">Docs</a>}
-              </div>
-            </div>
+            </a>
           ))}
         </div>
       </section>
@@ -248,26 +234,21 @@ function App() {
         </h2>
         <p className="section-desc">Let's build reliable systems together</p>
         <div className="contact-cards">
-          <a href="mailto:you@example.com" className="contact-card">
+          <a href="mailto:polikala64@gmail.com" className="contact-card">
             <span className="contact-icon">&#x2709;</span>
             <span className="contact-label">Email</span>
-            <span className="contact-value">you@example.com</span>
+            <span className="contact-value">polikala64@gmail.com</span>
           </a>
-          <a href="#" className="contact-card">
+          <a href="https://github.com/pkalab" className="contact-card" target="_blank" rel="noreferrer">
             <span className="contact-icon">&#xE000;</span>
             <span className="contact-label">GitHub</span>
-            <span className="contact-value">github.com/yourhandle</span>
-          </a>
-          <a href="#" className="contact-card">
-            <span className="contact-icon">&#xE001;</span>
-            <span className="contact-label">LinkedIn</span>
-            <span className="contact-value">linkedin.com/in/yourprofile</span>
+            <span className="contact-value">github.com/pkalab</span>
           </a>
         </div>
       </section>
 
       <footer className="footer">
-        <p>Built with React + Vite &middot; &copy; {new Date().getFullYear()} Your Name</p>
+        <p>Built with React + Vite &middot; &copy; {new Date().getFullYear()} Polina</p>
         <p className="footer-sub">
           <span className="footer-prompt">$</span> echo " deployed via GitHub Pages"</p>
       </footer>
